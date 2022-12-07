@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'chefdivisionafter.html' %}
+
+    </head>
+    <body style="background-color:#ffffff">
+        <div class="box"> 
+            <br>
+        <div class="form-group last" id="partie1">
+        <form action="updatecourrier/{{courrier.id}}" method="post">
+            {% csrf_token %}
+            
+            <label for="">Nature</label>
+            <br>
+              {{ formc.nature }}
+              <br>
+            
+              <label for="name">Catégorie</label>
+              <br>
+                {{ formc.categorie }}
+            <br>
+            <label for="name">Priorité</label>
+            <br>
+              {{ formc.priorite }}
+              <br>
+              <label for="">Date courrier</label>
+              <br>
+                {{ formc.date_courrier }}
+            <br>
+        </div>
+        <div class="form-group last" id="partie2">
+                <label for="">Date arrivée</label>
+                <br>
+                  {{ formc.date_arrivee }}
+                <br>
+                
+                <label for="name">Numero_ordre</label>
+              <br>
+                {{ formc.numero_ordre }}
+                <br>
+                
+                <label for="name">Objet</label>
+              <br>
+                {{ formc.objet }}
+            <br>
+            
+            <label for="">Référence</label>
+              <br>
+                {{ formc.reference }}
+                <br>
+                <label for="">Consigne</label>
+                  <br>
+                    {{ formc.consigne }}
+                <br>
+                
+                <label for="name">Autre consigne</label>
+                  <br>
+                    {{ formc.autre_consigne }}
+                <br>
+            
+
+              
+            <button type="submit" id="btn" class="btn btn-primary">Modifier</button>
+          </div>  
+        </form>
+    </div>
+     
+    
+<style>
+
+    .box{
+        width:55%;
+        height:460px;
+        margin-left:295px;
+        margin-top:2%;
+        padding-right:10px;
+        border-radius:10px;
+        background-color:black;
+        justify-content:center;
+        text-align:center;
+
+    }
+
+    #partie1{
+        width 25%;
+        display:inline-block;
+        float:right;
+        margin-right:50px;
+        margin-top:3%;
+    }
+    #partie2{
+        width:30%;
+        display:inline-block;
+        margin-left:60px;
+        float : left;
+        margin-top:3%;       
+        
+
+    }
+    #btn{
+        margin-left:500px
+    }    
+   label{
+    color:white;
+   }
+
+</style>
+    
+
+    </body>

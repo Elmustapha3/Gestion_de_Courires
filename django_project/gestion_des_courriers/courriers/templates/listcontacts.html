@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'agenttransmissionafter.html' %}
+
+    </head>
+    <body style="background-color:#fbfbfb">
+        <center>
+            <h1><strong>Liste des contacts</strong></h1>
+        </center>
+        <br>
+        <table width="100%" class="table table-hover">
+            <thead>
+                <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse</th>
+                <th>Code postal</th>
+                <th>Type</th>
+                <th>Préfecture_Province</th>
+                <th>Action<th>
+                
+            
+                </tr>
+            </thead>
+           
+        <tbody>
+            
+            {% for contact in listcontacts %}
+                <td>{{contact.nom}}</td>
+                <td>{{contact.prenom}}</td>
+                <td>{{contact.adresse}}</td>
+                <td>{{contact.code_postal}}</td>
+                <td>{{contact.type}}</td>
+                <td>{{contact.prefecture_province}}</td>
+                <td>
+                    <a href="/updatec/{{contact.id}}" class="btn btn-sm btn-success" id="edit">Edit</a>&nbsp &nbsp &nbsp
+                    <a href="/deletec/{{contact.id}}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                </td>
+               
+        
+            </tr>
+            
+            {% endfor %}
+
+            </tbody>
+            </table>
+         <div>
+            Page {{ page_obj.number}} of {{ page_obj.paginator.num_pages}}
+         </div>
+         <ul style="margin-right:20px;"class="pagination">
+            {% if page_obj.has_previous %}
+            <li><a href="?page=1">&laquo; First</a></li>
+            <li><a href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+            <li><a href="?page={{ page_obj.paginator.num_pages }}">Last</a></li>
+             {% endif %}
+         </ul>
+
+<style>
+    thead{
+        color:white;
+        background-color:rgb(21, 44, 55);
+    }
+    th{
+        text-align:center;
+
+    }
+    td{
+        text-align:center;
+
+    }
+    table{
+        justfify-content:center;
+
+    }
+    h1{
+        margin-top:30px;
+    }
+    #edit{
+        width:60px;
+        float:left;
+        
+    
+    }
+    #delete{
+        width:60px;
+        float:right;
+        margin-left:50px
+        bottom:10px
+     
+        
+        
+    }
+</style>
+
+    </body>
+    </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'agentserviceafter.html' %}
+
+    </head>
+    <body style="background-color:#ffffff">
+        <center>
+            <h1><strong>Liste des courriers</strong></h1>
+        </center>
+        <br>
+        <table width="100%" class="table table-hover">
+            <thead>
+                <tr>
+                <th>Nature</th>
+                <th>Categorie</th>
+                <th>Priorité</th>
+                <th>Date courrier</th>
+                <th>Date d'arrivée</th>
+                <th>Numéro d'ordre</th>
+                <th>Objet</th>
+                <th>Reférence</th>
+                <th>Consigne</th>
+                <th>Autre consigne</th>
+                
+            
+                </tr>
+            </thead>
+           
+        <tbody>
+            <div class="box">
+                <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'courriersag' %}">
+                <input class="form-control mr-sm-2" name="p" type="search" placeholder="Search" aria-label="Search">
+                
+                <button class="btn btn-info" type="submit">Search</button>
+                </form>
+            </div>
+            {% for courrier in listcourriersagent %}
+                <td>{{courrier.nature}}</td>
+                <td>{{courrier.categorie}}</td>
+                <td>{{courrier.priorite}}</td>
+                <td>{{courrier.date_courrier}}</td>
+                <td>{{courrier.date_arrivee}}</td>
+                <td>{{courrier.numero_ordre}}</td>
+                <td>{{courrier.objet}}</td>
+                <td>{{courrier.reference}}</td>
+                <td>{{courrier.consigne}}</td>
+                <td>{{courrier.autre_consigne}}</td>
+
+
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+
+<style>
+
+.box{
+    width:20%;
+    margin-left:200px;
+    display:flex;
+    float:right;
+}
+    thead{
+        color:white;
+        background-color:rgb(21, 44, 55);
+    }
+    th{
+        text-align:center;
+
+    }
+    td{
+        text-align:center;
+
+    }
+    table{
+        justfify-content:center;
+
+    }
+    h1{
+        margin-top:30px;
+    }
+    #edit{
+        width:60px;
+        float:left;
+        
+    
+    }
+    #delete{
+        width:60px;
+        float:right;
+        
+    }
+    
+</style>
+
+    </body>
+    </html>

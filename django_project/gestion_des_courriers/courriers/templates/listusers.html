@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'navbaradmin.html' %}
+
+    </head>
+    <body style="background-color:#ffffff">
+        <center>
+            <h1><strong>Liste des utilisateurs</strong></h1>
+        </center>
+        <br>
+        <table style="width:100%" class="table table-hover">
+            <thead>
+                <tr>
+                <th>Identifiant</th>
+                <th>Email</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Telephone</th>
+                <th>Role</th>
+                <th>Division</th>
+                <th>Service</th>
+                <th>Action</th>
+            
+                </tr>
+            </thead>
+           
+        <tbody>
+            
+            {% for ur in liste1 %}
+                <td>{{ur.identifiant}}</td>
+                <td>{{ur.email}}</td>
+                <td>{{ur.nom}}</td>
+                <td>{{ur.prenom}}</td>
+                <td>{{ur.telephone}}</td>
+                <td>{{ur.role}}</td>
+                <td>{{ur.division}}</td>
+                <td>{{ur.service}}</td>
+                <td>
+                <a href="/update/{{ur.id}}" class="btn btn-sm btn-success" id="edit">Edit</a>
+                <a href="/delete/{{ur.id}}" class="btn btn-sm btn-danger" id="delete">Delete</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                </td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+
+<style>
+
+    thead{
+        background-color:rgb(21, 44, 55);
+        color:white;
+    }
+    th{
+        text-align:center;
+
+
+    }
+    td{
+        text-align:center;
+    
+
+    }
+    table{
+        justfify-content:center;
+        
+        
+
+    }
+    h1{
+        margin-top:30px;
+    }
+    #edit{
+        width:65px;
+    }
+    #delete{
+        width:65px;
+    }
+</style>
+
+    </body>
+    </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'chefdivisionafter.html' %}
+
+    </head>
+    <body style="background-color:#ffffff">
+       <div class="box">
+        <form action="updateaffectation/{{affectation.id}}" method="post">
+            {% csrf_token %}
+            <br>
+            <br>
+            <label for="">Courrier</label>
+            <br>
+            {{forma.courrier}}
+            <br>
+            <br>
+
+            <label for="">Date_limite_de_traitement</label>
+            <br>
+            {{forma.date_limite_de_traitement}}
+            <br>
+            <br>
+            <label for="">Service</label>
+            <br>
+            {{forma.service}}
+            <br>
+           <br>
+           <br>
+           
+           <button type="submit" id="btn" class="btn btn-primary">Modifier</button>
+        </form>
+        <style>
+        .box{
+            width:40%;
+            height:400px;
+            margin-left:420px;
+            border:8px solid;
+            margin-top:3%;
+            padding-right:10px;
+            border-radius:10px;
+            background-color:black;
+            justify-content:center;
+            text-align:center;
+
+        }
+        label{
+            color:white;
+        }
+    </style>
+    </body>

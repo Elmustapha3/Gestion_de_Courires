@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'agenttransmissionafter.html' %}
+
+    </head>
+    <body style="background-color:#ffffff">
+        <div class="box"> 
+            <br>
+        <div class="form-group last" id="partie1">
+        <form action="updatecontact/{{contact.id}}" method="post">
+            {% csrf_token %}
+            
+            <label for="">Nom</label>
+            <br>
+              {{ formcontact.nom }}
+              <br>
+            
+              <label for="name">Prénom</label>
+              <br>
+                {{ formcontact.prenom}}
+            <br>
+            <label for="">Adresse</label>
+            <br>
+              {{ formcontact.adresse }}
+              <br>
+              <label for="">Code postal</label>
+              <br>
+                {{ formcontact.code_postal }}
+            <br>
+        </div>
+        <div class="form-group last" id="partie2">
+                <label for="">Type</label>
+                <br>
+                  {{ formcontact.type }}
+                <br>
+                <br>
+                <br>
+                <label for="name">Préfecture_Province</label>
+              <br>
+                {{ formcontact.prefecture_province }}
+                <br>
+                
+                <br>
+                <br>
+               <br>
+               <br>
+               <br>
+               <br>
+            
+
+              
+            <button type="submit" id="btn" class="btn btn-primary">Modifier</button>
+          </div>  
+        </form>
+    </div>
+     
+    
+<style>
+
+    .box{
+        width:55%;
+        height:460px;
+        margin-left:300px;
+        margin-top:2%;
+        padding-right:10px;
+        border-radius:10px;
+        background-color:black;
+        justify-content:center;
+        text-align:center;
+
+    }
+
+    #partie1{
+        width 25%;
+        display:inline-block;
+        float:right;
+        margin-right:50px;
+        margin-top:3%;
+    }
+    #partie2{
+        width:30%;
+        display:inline-block;
+        margin-left:60px;
+        float : left;
+        margin-top:3%;       
+        
+
+    }
+    #btn{
+        margin-left:250px
+        
+    }    
+   label{
+    color:white;
+   }
+
+</style>
+    
+
+    </body>

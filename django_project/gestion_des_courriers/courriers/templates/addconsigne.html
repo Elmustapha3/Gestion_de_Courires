@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content=IE=edge>
+        <title><title>
+        <meta name=description content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'navbaradmin.html' %}
+
+    <head>
+    <body style="background-color:#ffffff">
+        <div class="box"> 
+            <form  method="post">
+                {% csrf_token %}
+              <div class=form-group last id="partie1">
+                <br>
+                <label for="remarque">Remarque</label>
+                <br>
+                  {{ formc.remarque }}
+                  <br>
+                  <br>
+                <label for="dateconsigne" type="date">Date consigne</label>
+                <br>
+                
+                  {{ formc.date_consigne }}
+                  <br>
+              </div>
+              <br>
+              <br>
+            <br>
+              <button type="submit" id="btn" class="btn btn-primary" style="border-radius 0%">Ajouter</button>
+            <div>  
+            </form>
+
+          <style>
+            .box{
+                width:50%;
+                shadow:8px;
+                height:400px;
+                margin-left:350px;
+                margin-top:3%;
+                border-radius:10px;
+                background-color:rgb(21, 44, 55);
+                text-align:center;
+            
+            }
+            #btn{
+                margin-left20px;
+                height:40px;
+                line-height:5px
+                
+            }
+            label{
+                color:white;
+            }
+           
+          </style>
+          </body>
+    

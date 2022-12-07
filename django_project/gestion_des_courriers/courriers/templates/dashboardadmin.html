@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'adminafter.html' %}
+
+    </head>
+    <body style="background-color:#ffffff">
+        <center>
+            <br>
+            <br>
+       
+        <center><strong><p id="statistic">Statistiques :</p></strong></center>
+        <div class="box" id="box1">
+           <br>
+           
+        <center><strong style="font-size:20px">Courriers :</strong></center>
+        <br> 
+        <strong><p><center style="margin-bottom:20px">TOTAL = {{ num_courrier }} Courrier(s)</center></p></strong>
+        </div>
+
+        <div class="box" id="box2">
+            <br>
+            <center><strong style="font-size:20px">Affectations :</strong></center>
+            <br> 
+           
+        <strong><p><center style="margin-bottom:20px";>TOTAL = {{ num_affectation }} Affectation(s)</center></p></strong>
+        </div>
+        <div class="box" id="box3">
+            <br>
+            <center><strong style="font-size:20px">Utilisateurs :</strong></center>
+            <br> 
+           
+        <strong><p><center style="margin-bottom:20px";>TOTAL = {{ num_utilisateur }} Utilisateur(s)</center></p></strong>
+        </div>
+        <div class="box" id="box4">
+            <br>
+            <center><strong style="font-size:20px">Consignes :</strong></center>
+            <br> 
+           
+        <strong><p><center style="margin-bottom:20px";>TOTAL = {{ num_consigne}} consigne(s)</center></p></strong>
+        </div>
+
+
+
+      
+        <style>
+            #box1{
+                width:30%;
+                float:right;
+                margin-right:180px;
+                margin-top:1%;
+                color:white;
+                background-color:rgb(21, 44, 55);
+                border-radius:30px 30px 30px 30px ;
+            }
+            #box2{
+                width:30%;
+                float:left;
+                margin-left:180px;
+                margin-top:1%;
+                color:white;
+                background-color:rgb(21, 44, 55);
+                border-radius:30px 30px 30px 30px ;
+            }
+            #box3{
+                width:30%;
+                float:right;
+                margin-right:180px;
+                margin-top:2%;
+                color:white;
+                background-color:rgb(21, 44, 55);
+                border-radius:30px 30px 30px 30px ;
+            }
+            #box4{
+                width:30%;
+                float:left;
+                margin-left:180px;
+                margin-top:2%;
+                color:white;
+                background-color:rgb(21, 44, 55);
+                border-radius:30px 30px 30px 30px ;
+            }
+            p{
+                font-size:25px;
+                line-height:6px
+                
+            }
+            #statistic{
+            font-size:30px
+            }
+          
+        </style>
+    </body>
+    </html>

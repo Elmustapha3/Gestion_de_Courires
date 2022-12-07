@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% load static %}
+   {% include 'chefdivisionafter.html' %}
+
+    </head>
+    <body style="background-color:#ffffff">
+        <center>
+            <h1><strong>Liste des affectations</strong></h1>
+        </center>
+        <br>
+        <table width="80%" class="table table-hover">
+            <thead>
+                <tr>
+                <th>Courrier</th>
+                <th>Service traitant</th>
+                <th>Date limite de traitement</th>
+                <th>Action<th>
+                
+            
+                </tr>
+            </thead>
+           
+        <tbody>
+            
+            {% for affectation in formaffect %}
+                <td>{{affectation.courrier}}</td>
+                <td>{{affectation.service}}</td>
+                <td>{{affectation.date_limite_de_traitement}}</td>
+
+                <td>
+                <a href="/updateaff/{{affectation.id}}" class="btn btn-sm btn-success" id="edit">Edit</a>&nbsp &nbsp &nbsp
+                <a href="/deleteaff/{{affectation.id}}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
+
+<style>
+    thead{
+        background-color:rgb(21, 44, 55);
+        color:white;
+    }
+    th{
+        text-align:center;
+
+    }
+    td{
+        text-align:center;
+
+    }
+    table{
+        justfify-content:center;
+
+    }
+    h1{
+        margin-top:30px;
+    }
+    #edit{
+        width:65px;
+    }
+    #delete{
+        width:65px;
+    }
+</style>
+
+    </body>
+    </html>
